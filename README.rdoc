@@ -1,0 +1,13 @@
+https://www.udemy.com/build-a-photo-blog-with-ruby-on-rails/learn/v4/t/lecture/2605446?start=0
+
+rails new photoflash
+rake db:create
+rails s -b $IP -p $PORT
+rails g scaffold post title:string image:string description:text
+rake db:migrate
+bundle install --without production
+rails g uploader photo
+
+figaro install
+->create  config/application.yml
+
