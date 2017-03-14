@@ -83,5 +83,20 @@ $bundle exec rspec
 
 $bundle exec rspec  --format documentation
 -> see what are you validate using rspec 
-
-        
+---------------------- Deploy to Heroku -----------------
+$git add .
+$git commit -m "Deploy to Heroku"
+$heroku create udemyphotoblog
+->see udemyphotoblog app in https://dashboard.heroku.com/apps 
+$git remote -v
+-> see: heroku  https://git.heroku.com/udemyphotoblog.git 
+#following 4 lines from config/application.yml
+#ref:http://stackoverflow.com/questions/27949158/heroku-missing-required-arguments-aws-access-key-id-aws-secret-access-key-f
+$heroku config:set AWS_ACCESS_KEY_ID=xxx
+$heroku config:set AWS_SECRET_ACCESS_KEY=xxx
+$heroku config:set AWS_REGION=xxx
+$heroku config:set AWS_BUCKET=xxx
+$git push heroku master
+$heroku run rake db:migrate
+$heroku open
+->https://udemyphotoblog.herokuapp.com/ working      
