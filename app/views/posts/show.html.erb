@@ -7,7 +7,10 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @post.image %>
+  <!--<!--%= image_tag(@post.image.tiny.url) %>-->
+  <%= image_tag(@post.image.profile_size.url) %>
+  <!--list debugging message-->
+  <!--%= @post.image.inspect %--> 
 </p>
 
 <p>

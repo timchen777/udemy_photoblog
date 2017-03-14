@@ -60,3 +60,4 @@ Check /vendor/.gitignore file should contained following line
 
 next:#4-15:
 Rendering images from the server onto the web application
+
