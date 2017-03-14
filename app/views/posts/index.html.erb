@@ -2,8 +2,10 @@
 
 <h1>Photo Blog</h1>
     <% @posts.each do |post| %>
+        <a href="<%= post_url(post) %>">
+          <%= image_tag(post.image.tiny.url) %>
+        </a>
         <h2><%= link_to post.title, post %></h2>
-        <%= image_tag(post.image.tiny.url) %>
         <%= post.description %>
         <br>
         <%= link_to 'Edit', edit_post_path(post) %>
