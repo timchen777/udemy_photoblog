@@ -61,3 +61,27 @@ Check /vendor/.gitignore file should contained following line
 next:#4-15:
 Rendering images from the server onto the web application
 
+#5-18 ------------ using rspec testing -----------------
+add: gem 'rspec-rails', '~> 3.0'
+$bundle install --without production
+$rails generate rspec:install
+->created spec/spec_helper.rb
+          spec/rails_helper.rb
+$bundle exec rspec
+$rails g model User name:string email:string password:string
+-> created 
+   db/migrate/20170314034958_create_users.rb
+   app/models/user.rb
+   spec/models/user_spec.rb
+$bundle exec rake db:migrate
+$rails c
+> User.create!(name: "Bob", email:"B@g,com", password:"13")
+> ap User.all
+edit user_spec.rb
+$bundle exec rspec
+->see 1 example, 0 failures
+
+$bundle exec rspec  --format documentation
+-> see what are you validate using rspec 
+
+        
